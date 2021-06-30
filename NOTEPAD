@@ -4,13 +4,13 @@ API: https://www.thecocktaildb.com/api.php
 
 Story:
 
-This is just a quick fun webpage interactive game that the end-user will become a bartender and making cocktails for the customers.
+This is just a quick fun webpage interactive game that the end-user will work as a bartender and making cocktails for the customers.
 
 
 MVP:
-The user will be able to mixing drink from the available coktail recipes. 
-Users should have the option to select a particular drink from the API. From there, the ingredients of the drink will be listed.
-There will be clickable buttons like "pour in" "shake" "serve" available for user interactions wiht the webpage app.
+1.The user will be able to mixing drink from the available coktail recipes. 
+2.Users should have the option to select a particular drink from the API. From there, the ingredients of the drink will be listed.
+3.There will be clickable buttons like "pour in" "shake" "serve" available for user interactions wiht the webpage app.
 
 Stretch Goals
 1.Randomize the drink option

@@ -1,7 +1,9 @@
-const URL = 'http://localhost:3000/Animals-world'
+const Url = 'https://cocktailsapi.xyz/'
 
-fetch(URL)
+fetch('https://cocktailsapi.xyz/')
 .then(resp => resp.json())
 .then(data => {
-    
-})
+console.log(data)
+
+});
+
