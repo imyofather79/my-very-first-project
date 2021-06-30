@@ -11,8 +11,13 @@
     <body>
         <h1>The Bartender</h1>
 
-        <p id='drinks'></p>
-        <button id="random-drinks-button">Drinks</button>
+        <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">Select A Drink</button>
+            <div id="myDropdown" class="dropdown-content">
+              <a href="#">Link 1</a>
+            </div>
+          </div>
+        
         <button id="pour-button">Pour</button>
         <button id="shake-button">Shake</button>
         <button id="serve-button">Serve</button>

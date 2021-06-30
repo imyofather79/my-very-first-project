@@ -1,7 +1,11 @@
-# my-very-first-project
+The Bartender
 
-This is 
+This is simply interactive webpage where you can mix your own cocktails!
 
-how install
+Installation & Usage
 
-run => any special considerations => how do you run json server
+Clone down the repo and open index.html in your browser.
+
+API
+
+This mini project utilizes the TheCocktailDB where the API can be found here: "https://www.thecocktaildb.com/api.php"

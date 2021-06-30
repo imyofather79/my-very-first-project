@@ -1,6 +1,6 @@
-const Url = 'https://cocktailsapi.xyz/'
+const Url = 'www.thecocktaildb.com/api/json/v1/1'
 
-fetch('https://cocktailsapi.xyz/')
+fetch(Url)
 .then(resp => resp.json())
 .then(data => {
 console.log(data)
