@@ -1,8 +1,14 @@
 {
-    "events" : [
-
-
-
-
-    ]
+  "cocktails": [
+    {
+      "id": 1,
+      "drink": "Strawberry Soda",
+      "ingredients": "Vodka, Strawberry Syrup, soda water or diet sprite"
+    },
+    {
+      "id": 2,
+      "drink": "Pineapple Sunrise Mimosas",
+      "ingredients": "Pineapple juice, orange juice, lime juice, fresh pineapple, blood orange, lime, Prosecco, Campari, pineapple and orange slices"
+    }
+  ]
 }

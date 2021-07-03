@@ -3,11 +3,11 @@ h1 {
     text-align: center;
 }
 
-body {
+/* body {
     background-image: url("https://themissouritimes.com/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-4.35.49-PM.png");
     background-repeat: no-repeat;
     
-}
+} */
 
 .dropbtn {
     background-color: #3498DB;
@@ -51,9 +51,9 @@ body {
   .dropdown-content a:hover {background-color: #ddd}  /* Change color of dropdown links on hover */
   
  
-  .show {display:block;}  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}  Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button)
 
-  .pour-button {
+  .mix-button {
     background-color: #6034db;
     color: white;
     padding: 16px;
@@ -62,10 +62,10 @@ body {
     cursor: pointer;
   } /* Pour Button */
 
-  .pour-button:hover, .pour-button:focus {
+  .mix-button:hover, .mix-button:focus {
     background-color: #3a0bbb;
   } 
-  .pour-button {
+  .mix-button {
     position: relative;
     display: inline-block;
   } 
