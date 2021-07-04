@@ -10,6 +10,6 @@ Clone down the repo and open index.html in your browser.
 
 API
 
-This mini project utilizes the TheCocktailDB where the API can be found here: "https://www.thecocktaildb.com/api.php"
+This mini project utilizes the TheCocktailDB where the API can be found here: "https://www.thecocktaildb.com/api/json/v1/1/random.php"
 
 

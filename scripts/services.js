@@ -1,28 +1,16 @@
-const Url = 'http://localhost:3000/cocktails';
+const Url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
 
-// function getCocktails() {
-//   return fetch(Url, {
-//     headers: {
-//       'Accept': 'application/json'
-//     }
-//   })
-fetch(Url)
+function getCocktail(){
+  return fetch(Url, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
   .then(res => res.json())
   .then(data => {
-    console.log(data)
-    const ul = document.querySelector('')
-
-  })
-
-
-// function postCocktails(body) {
-//     return fetch(Url, {
-//       method: 'POST',
-//       headers: {
-//         'Accept': 'application/json'
-//       },
-//       body: JSON.stringify(body)
-//     })
-//     .then(res => res.json())
-//   }
-// // + "/search.php"
+    cocktailsName = data
+    const drinkData = `${data.strDrink}`
+    console.log(`${data.strDrink}`)
+    cocktailPTag.innerText = drinkData
+})}
