@@ -9,8 +9,8 @@ function getCocktail(){
   })
   .then(res => res.json())
   .then(data => {
-    cocktailsName = data
-    const drinkData = `${data.strDrink}`
-    console.log(`${data.strDrink}`)
-    cocktailPTag.innerText = drinkData
+      // cocktailsName = data
+      // const drinkData = [`${data.strDrink}`, `${data.strIngredient1}`]
+      drinkData = data
+      cocktailPTag.innerText = drinkData
 })}

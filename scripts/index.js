@@ -1,37 +1,53 @@
 
-const cocktailPTag = document.querySelector('#main')
-const randomCocktailButton = document.querySelector('#random-button')
-// const cocktailSubmit = document.querySelector('#cocktailList')
-const removeIngredButton = document.querySelector('mix-shake-button')
-const imageButton = document.querySelector('#serve-button')
+const cocktailPTag = document.querySelector('#main');
+const randomCocktailButton = document.querySelector('#random-button');
+// const cocktailSubmit = document.querySelector('#cocktailList');
+const removeIngredButton = document.querySelector('mix-shake-button');
+const imageButton = document.querySelector('#serve-button');
+const imageDrink = document.querySelector('#image');
 
-const Url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php'
+const Url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
 
 function getCocktail(){
-  return fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-  .then(res => res.json())
-  .then(data => {
-    // cocktailsName = data
-    const drinkData = [`${data.strDrink}`, `${data.strIngredient1}`]
-    console.log(`${data.strDrink}`)
-    cocktailPTag.innerText = drinkData
+  return fetch(Url, {
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(result => {
+      const data = JSON.stringify(result);
+      
+      const drinkData = data;
+      cocktailPTag.innerText = drinkData;
 })}
 
 
-removeIngredButton.addEventListener("mix-shake-button", (e)=>
-  e.preventDefault();
-  
-  removeIngred = cocktailPTag.remove();
-)
+// function removeDrink(){
+//   removeIngredButton.addEventListener("mix-shake-button",
+//   newCocktailPTag = document.querySelector('#main')
+//   removeIngred = newCocktailPTag.remove();
+//   )
+// }
+
+// async function cocktailPic(){
+//   const res = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
+//   const data = await res.json()
+//   let picUrl = new Image()
+//   picUrl.src = `${data.strDrinkThumb}`
+    
+// }
 
 randomCocktailButton.addEventListener('click', getCocktail)
 
+getCocktail();
 
-document.addEventListener('DOMContentLoaded', function(){
-  getCocktail();
+// document.addEventListener('DOMContentLoaded', function(){
   
-});
+//   removeDrink();
+//   cocktailPic();
+// });
 
 // function cocktailName(){
 //   const inputForm = document.querySelector('form');
