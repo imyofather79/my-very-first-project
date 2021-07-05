@@ -14,3 +14,4 @@ function getCocktail(){
       drinkData = data
       cocktailPTag.innerText = drinkData
 })}
+

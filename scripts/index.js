@@ -24,30 +24,36 @@ function getCocktail(){
 })}
 
 
-// function removeDrink(){
-//   removeIngredButton.addEventListener("mix-shake-button",
-//   newCocktailPTag = document.querySelector('#main')
-//   removeIngred = newCocktailPTag.remove();
-//   )
-// }
+function removeDrink() {
+  $("main").remove();
+  // document.getElementById('main').remove();
+  this.remove();
+}
 
-// async function cocktailPic(){
-//   const res = await fetch("https://www.thecocktaildb.com/api/json/v1/1/random.php")
-//   const data = await res.json()
-//   let picUrl = new Image()
-//   picUrl.src = `${data.strDrinkThumb}`
+function cocktailPic(){
+  return fetch(Url, {
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(result => {
+    const data = JSON.stringify(result);
     
-// }
+    let picUrl = new Image()
+    picUrl.src = `${data.strDrinkThumb}`
+    
+}
 
 randomCocktailButton.addEventListener('click', getCocktail)
 
-getCocktail();
+removeIngredButton.addEventListener('click', removeDrink)
 
-// document.addEventListener('DOMContentLoaded', function(){
+
+document.addEventListener('DOMContentLoaded', function(){
+  removeDrink();
   
-//   removeDrink();
-//   cocktailPic();
-// });
+});
 
 // function cocktailName(){
 //   const inputForm = document.querySelector('form');
