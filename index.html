@@ -5,13 +5,16 @@
         <title>Project_1: The Bartender</title>
         <script defer src="scripts/index.js" charset="utf-8"></script>
         <!-- <script defer src="scripts/services.js" charset="utf-8"></script> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <body>
         <h1>The Bartender</h1>
         <h2>Cocktail</h2>
-        <p id="main"></p>
+        <p id="main">
+          <ul id = "text"></ul>
+        </p>
 <!-- 
         <section>
           <form>
@@ -31,8 +34,8 @@
 
         <button id="random-button">Random</button>
 
-        <button id="mix-shake-button">Mix/Shake</button>
-        <!-- <button id="shake-button">Shake</button> -->
+        <button id="mix-shake-button" onclick="removeDrink()">Mix&Shake</button>
+        
         <button id="serve-button">Serve</button>
 
         <h2>Served Drinks</h2>

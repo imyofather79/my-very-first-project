@@ -3,8 +3,8 @@ const cocktailPTag = document.querySelector('#main');
 const randomCocktailButton = document.querySelector('#random-button');
 // const cocktailSubmit = document.querySelector('#cocktailList');
 const removeIngredButton = document.querySelector('mix-shake-button');
-const imageButton = document.querySelector('#serve-button');
-const imageDrink = document.querySelector('#image');
+// const imageButton = document.querySelector('#serve-button');
+// const imageDrink = document.querySelector('#image');
 
 const Url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
@@ -17,43 +17,52 @@ function getCocktail(){
   })
   .then(response => response.json())
   .then(result => {
+      const ul = document.querySelector('#text')
       const data = JSON.stringify(result);
-      
-      const drinkData = data;
-      cocktailPTag.innerText = drinkData;
+      const drinkData = data; 
+      const li = document.createElement('li')
+      li.textContent = drinkData;
+      ul.append(li);
+      // need this drinkData to become const drinkData = [`${data.strDrink}`, `${data.strIngredient1}`]
+      // cocktailPTag.innerText = drinkData;
 })}
 
 
 function removeDrink() {
-  $("main").remove();
-  // document.getElementById('main').remove();
-  this.remove();
+  
+  const removeDrink = document.querySelector('#text');
+  document.removeChild(removeDrink.parentElement.removeChild(removeDrink));
 }
+// I can only get it to delete the whole id
 
-function cocktailPic(){
-  return fetch(Url, {
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(result => {
-    const data = JSON.stringify(result);
+// function cocktailPic(){
+//   return fetch(Url, {
+//     headers: {
+//       'Accept': 'application/json'
+//     }
+//   })
+//   .then(response => response.json())
+//   .then(result => {
+//     const data = JSON.stringify(result);
+//     let picUrl = new Image()
+//     picUrl.src = `${data.strDrinkThumb}`
     
-    let picUrl = new Image()
-    picUrl.src = `${data.strDrinkThumb}`
-    
-}
+// }
+// Need ths strDrinkThumb to be the same as the one rendered from the Random cocktail
 
 randomCocktailButton.addEventListener('click', getCocktail)
 
 removeIngredButton.addEventListener('click', removeDrink)
 
+// imageButton.addEventListener('click', cocktailPic)
 
 document.addEventListener('DOMContentLoaded', function(){
   removeDrink();
-  
+  // cocktailPic();
 });
+
+// --------------------------------------------------------------------
+
 
 // function cocktailName(){
 //   const inputForm = document.querySelector('form');
