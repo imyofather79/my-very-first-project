@@ -4,13 +4,13 @@ h1 {
 }
 
 h2 {
-  color: rgb(255, 255, 255);
+  color: rgb(255, 0, 0);
   text-align: center;
 }
 
 body {
-    background-image: url("https://themissouritimes.com/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-4.35.49-PM.png");
-    background-repeat: no-repeat;
+    /* background-image: url("https://themissouritimes.com/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-4.35.49-PM.png");
+    background-repeat: no-repeat; */
     text-align: center;
 } 
 

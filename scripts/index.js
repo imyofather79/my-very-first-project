@@ -1,12 +1,13 @@
 
 const cocktailPTag = document.querySelector('#main');
 const randomCocktailButton = document.querySelector('#random-button');
-// const cocktailSubmit = document.querySelector('#cocktailList');
 const removeIngredButton = document.querySelector('mix-shake-button');
-// const imageButton = document.querySelector('#serve-button');
-// const imageDrink = document.querySelector('#image');
+const imageButton = document.querySelector('#serve-button');
+const imageDrink = document.querySelector('#image');
 
 const Url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
+
+let currentImg;
 
 
 function getCocktail(){
@@ -18,12 +19,21 @@ function getCocktail(){
   .then(response => response.json())
   .then(result => {
       const ul = document.querySelector('#text')
-      const data = JSON.stringify(result);
-      const drinkData = data; 
+      ul.innerHTML = "";
+      const data = result.drinks[0]
+      const drinkData = [`${data.strDrink}`, `${data.strIngredient1}`,
+       `${data.strIngredient2}`, `${data.strIngredient3}`,
+        `${data.strIngredient4}`, `${data.strIngredient5}`,
+         `${data.strIngredient6}`, `${data.strIngredient7}`,
+       `${data.strIngredient8}`, `${data.strIngredient9}`]
       const li = document.createElement('li')
       li.textContent = drinkData;
       ul.append(li);
-      // need this drinkData to become const drinkData = [`${data.strDrink}`, `${data.strIngredient1}`]
+      currentImg = data.strDrinkThumb;
+      // need this drinkData to become 
+      
+      // also need the pull all the strIngredient1-n out
+      
       // cocktailPTag.innerText = drinkData;
 })}
 
@@ -31,24 +41,36 @@ function getCocktail(){
 function removeDrink() {
   
   const removeDrink = document.querySelector('#text');
-  document.removeChild(removeDrink.parentElement.removeChild(removeDrink));
+ removeDrink.parentElement.removeChild(removeDrink);
 }
-// I can only get it to delete the whole id
+/* I can only get it to delete the whole id
+*/
 
-// function cocktailPic(){
-//   return fetch(Url, {
-//     headers: {
-//       'Accept': 'application/json'
-//     }
-//   })
-//   .then(response => response.json())
-//   .then(result => {
-//     const data = JSON.stringify(result);
-//     let picUrl = new Image()
-//     picUrl.src = `${data.strDrinkThumb}`
+function cocktailPic(){
+  return fetch(Url, {
+    headers: {
+      'Accept': 'application/json'
+    }
+  })
+  .then(response => response.json())
+  .then(result => {
+    const createUl = document.createElement('ul')
     
-// }
+    const data = JSON.stringify(result);
+    // let picUrl = new Image()
+    picUrl.src = `${data.strDrinkThumb}`
+    ul.setAttribute('id', 'text');
+    document.getElementById('main').appendChild(ul);
+})
+}
+/*
 // Need ths strDrinkThumb to be the same as the one rendered from the Random cocktail
+I will need to recreate the <ul id='text'></ul> under the p#main tag, 
+as I have just removed the whole tag from removeDrink()
+
+I will also need to make this "Serve" button as my reset button as well,
+so everything will loop back to the start
+*/
 
 randomCocktailButton.addEventListener('click', getCocktail)
 
@@ -58,7 +80,7 @@ removeIngredButton.addEventListener('click', removeDrink)
 
 document.addEventListener('DOMContentLoaded', function(){
   removeDrink();
-  // cocktailPic();
+  cocktailPic();
 });
 
 // --------------------------------------------------------------------
