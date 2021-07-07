@@ -3,11 +3,12 @@ const cocktailPTag = document.querySelector('#main');
 const randomCocktailButton = document.querySelector('#random-button');
 const removeIngredButton = document.querySelector('mix-shake-button');
 const imageButton = document.querySelector('#serve-button');
-const imageDrink = document.querySelector('#image');
+const resetBtn = document.querySelector('#reset-button');
 
 const Url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
 let currentImg;
+let drinkIngred;
 
 
 function getCocktail(){
@@ -21,67 +22,72 @@ function getCocktail(){
       const ul = document.querySelector('#text')
       ul.innerHTML = "";
       const data = result.drinks[0]
-      const drinkData = [`${data.strDrink}`, `${data.strIngredient1}`,
-       `${data.strIngredient2}`, `${data.strIngredient3}`,
+      const drinkData = [`${data.strDrink}`]
+      cocktailPTag.innerText = drinkData;
+      drinkIngred = [`${data.strIngredient1}`,
+        `${data.strIngredient2}`, `${data.strIngredient3}`,
         `${data.strIngredient4}`, `${data.strIngredient5}`,
-         `${data.strIngredient6}`, `${data.strIngredient7}`,
-       `${data.strIngredient8}`, `${data.strIngredient9}`]
+        `${data.strIngredient6}`, `${data.strIngredient7}`,
+        `${data.strIngredient8}`, `${data.strIngredient9}`]
       const li = document.createElement('li')
-      li.textContent = drinkData;
+      li.textContent = drinkIngred;
       ul.append(li);
       currentImg = data.strDrinkThumb;
-      // need this drinkData to become 
-      
-      // also need the pull all the strIngredient1-n out
-      
-      // cocktailPTag.innerText = drinkData;
 })}
 
 
 function removeDrink() {
-  
-  const removeDrink = document.querySelector('#text');
- removeDrink.parentElement.removeChild(removeDrink);
+    const removeDrink = document.querySelector('#text');
+    const li = document.querySelector('li');
+    li.innerHTML = "";
+    removeDrink.innerHTML = "";
+ 
 }
-/* I can only get it to delete the whole id
-*/
+
 
 function cocktailPic(){
-  return fetch(Url, {
-    headers: {
-      'Accept': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(result => {
-    const createUl = document.createElement('ul')
+    const newUl = document.createElement("ul");
+    newUl.setAttribute('id', 'text');
+
+    // const element = document.getElementById("main");
+    cocktailPTag.appendChild(newUl);
+
+
+    const img = document.createElement("img");
+    img.src = currentImg;
+    const src = document.getElementById("image");
+    src.appendChild(img);
+    // img.innerHTML = "";
     
-    const data = JSON.stringify(result);
-    // let picUrl = new Image()
-    picUrl.src = `${data.strDrinkThumb}`
-    ul.setAttribute('id', 'text');
-    document.getElementById('main').appendChild(ul);
-})
+
 }
-/*
-// Need ths strDrinkThumb to be the same as the one rendered from the Random cocktail
-I will need to recreate the <ul id='text'></ul> under the p#main tag, 
-as I have just removed the whole tag from removeDrink()
 
-I will also need to make this "Serve" button as my reset button as well,
-so everything will loop back to the start
-*/
+function resetAll(){
+  // inputForm.addEventListener('submit', (e) => {
+  //   e.preventDefault();
+  const removeDrink = document.querySelector('#text');
+  const li = document.querySelector('li');
+  li.innerHTML = "";
+  removeDrink.innerHTML = "";
 
-randomCocktailButton.addEventListener('click', getCocktail)
+}
 
-removeIngredButton.addEventListener('click', removeDrink)
 
-// imageButton.addEventListener('click', cocktailPic)
+randomCocktailButton.addEventListener('click', getCocktail);
+
+removeIngredButton.addEventListener('click', removeDrink);
+
+imageButton.addEventListener('click', cocktailPic);
+
+resetBtn.addEventListener('click', resetAll);
 
 document.addEventListener('DOMContentLoaded', function(){
   removeDrink();
   cocktailPic();
+  resetAll();
 });
+
+
 
 // --------------------------------------------------------------------
 
