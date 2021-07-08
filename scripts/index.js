@@ -49,18 +49,17 @@ function removeDrink() {
 
 
 function cocktailPic(){
-    cocktailImg.innerText = drinkName;
+    cocktailImg.innerText = drinkName + "\n";
     const img = document.createElement("img");
     img.src = currentImg;
-    const pic = document.getElementById("image");
-    pic.appendChild(img);
-    img.style.display = "inline";
+    cocktailImg.appendChild(img);
+ 
     
 }
 
 function resetAll(){
   const removeName = document.querySelector('#main');
-  removeName.innerHTML = "Name";
+  removeName.innerHTML = "Cocktail";
   const removePic = document.querySelector('#image');
   removePic.innerHTML = "";
   const removeDrink = document.querySelector('#text');

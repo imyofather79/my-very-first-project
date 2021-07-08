@@ -6,27 +6,30 @@
         <script defer src="scripts/index.js" charset="utf-8"></script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Archivo+Black&display=swap" rel="stylesheet">
     </head>
 
     <body>
-        <h1>The Bartender</h1>
-        <h2>Cocktail</h2>
+        <article>
+        <h1 class="logo-1">The Bartender</h1>
+        <h2 class='title3'>Cocktail</h2>
         <p id="main">Cocktail</p>
         <ul id = "text"></ul>
     <div>
 
-        <button id="random-button">Random</button>
+        <button class='myButton' id="random-button">Random</button>
 
-        <button id="mix-shake-button" onclick="removeDrink()">Mix&Shake</button>
+        <button class='myButton' id="mix-shake-button" onclick="removeDrink()">Mix&Shake</button>
         
-        <button id="serve-button" onclick="cocktailPic()">Serve</button>
+        <button class='myButton' id="serve-button" onclick="cocktailPic()">Serve</button>
 
-        <button id="reset-button" onclick="resetAll()">Reset</button>
+        <button class='myButton' id="reset-button" onclick="resetAll()">Reset</button>
 </div>
-        <h2>Served Drinks</h2>
+        <h2 class="logo-1">Served Drinks</h2>
 
-        <div id="image">Your Cocktail</div>
+        <div class='blurry-text' id="image"></div>
     
+    </article>
 
     </body>
 </html>

@@ -1,79 +1,136 @@
+:root {
+  --shadow-color: #FF9E9E;
+  --shadow-color-light: white;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+p {
+  font-size: 65px;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  font-weight: 900;
+  display: block;
+  height: auto;
+  text-align: center;
+}
+
 h1 {
-    color: rgb(183, 228, 240);
+    color: rgb(255, 255, 255);
+    font-size: 400%;
+    font-weight: 900;
+    font-family: "Archivo Black", "Archivo", sans-serif;
     text-align: center;
 }
 
-h2 {
-  color: rgb(255, 0, 0);
-  text-align: center;
-}
 
 p#main {
-  color: rgb(255, 0, 0);
+  font-size: 200%;
+  color: #fefefe;
+  font-family: "Archivo Black", "Archivo", sans-serif;
   text-align: center;
+  font-weight: 900;
 }
 
 li {
-  color: rgb(255, 0, 0);
+  font-size: 200%;
+  color: #fefefe;
+  font-family: "Archivo Black", "Archivo", sans-serif;
   text-align: center;
+  font-weight: 900;
 }
 
-/* body {
+body {
     background-image: url("https://themissouritimes.com/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-4.35.49-PM.png");
     background-repeat: no-repeat;
     text-align: center;
-}  */
+    font-family: "Archivo Black", "Archivo", sans-serif;
+} 
 
- 
-.mix-button {
-    background-color: #6034db;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-  } 
+.title3 {
+  font-size: 200%;
+  color: #ffffff;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  text-align: center;
+  font-weight: 900;
+}
 
-.mix-button:hover, .mix-button:focus {
-    background-color: #3a0bbb;
-  } 
-.mix-button {
-    position: relative;
-    display: inline-block;
-  } 
-
-.shake-button {
-    background-color: #db344a;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  } /* Shake Button */
-
-.shake-button:hover, .shake-button:focus {
-    background-color: #7e1220;
-  }  
-.shake-button {
-    position: relative;
-    display: inline-block;
-  } 
+.blurry-text {
+  color: #ffffff;
+  display: block;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding: 50px;
+  text-align: center;
+  font-weight: 900;
+  font-size: 200%;
+  filter:blur(2px);
+}
 
 
-.serve-button {
-    background-color: #34dbc5;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  } /* Serve Button */
+.myButton {
+  background:#000000;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size:1.6em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  font-family: "Archivo Black", "Archivo", sans-serif;
+}
+.myButton:hover{ 
+  background:#fff;
+  color:#000000;
+  
+}
+.myButton:before,.myButton:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #000000;
+  transition:400ms ease all;
+}
+.myButton:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.myButton:hover:before,.myButtonn:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
 
-.serve-button:hover, .serve-button:focus {
-    background-color: #128f7e;
-  }  
-.serve-button {
-    position: relative;
-    display: inline-block;
-  } 
+
+.logo-1 {
+  color: white;
+  animation: neon 3s infinite;
+}
+
+@keyframes neon {
+  0% {
+    text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+    0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+    0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+  }
+  50% {
+    text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+    0 0 5px var(--shadow-color-light), 0 0 15px var(--shadow-color-light), 0 0 25px var(--shadow-color-light),
+    0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 60px var(--shadow-color), 0 0 80px var(--shadow-color), 0 0 110px var(--shadow-color), 0 0 210px var(--shadow-color);
+  }
+  100% {
+    text-shadow: -1px -1px 1px var(--shadow-color-light), -1px 1px 1px var(--shadow-color-light), 1px -1px 1px var(--shadow-color-light), 1px 1px 1px var(--shadow-color-light),
+    0 0 3px var(--shadow-color-light), 0 0 10px var(--shadow-color-light), 0 0 20px var(--shadow-color-light),
+    0 0 30px var(--shadow-color), 0 0 40px var(--shadow-color), 0 0 50px var(--shadow-color), 0 0 70px var(--shadow-color), 0 0 100px var(--shadow-color), 0 0 200px var(--shadow-color);
+  }
+}
