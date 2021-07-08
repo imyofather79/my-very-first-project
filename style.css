@@ -8,81 +8,42 @@ h2 {
   text-align: center;
 }
 
-body {
-    /* background-image: url("https://themissouritimes.com/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-4.35.49-PM.png");
-    background-repeat: no-repeat; */
+p#main {
+  color: rgb(255, 0, 0);
+  text-align: center;
+}
+
+li {
+  color: rgb(255, 0, 0);
+  text-align: center;
+}
+
+/* body {
+    background-image: url("https://themissouritimes.com/wp-content/uploads/2020/04/Screen-Shot-2020-04-14-at-4.35.49-PM.png");
+    background-repeat: no-repeat;
     text-align: center;
-} 
+}  */
 
-/* .dropbtn {
-    background-color: #3498DB;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-  } 
-  Dropdown Button
-  
-
-  .dropbtn:hover, .dropbtn:focus {
-    background-color: #2980B9;
-  }   
-  Dropdown button on hover & focus
-  
-  
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  } 
-  The container <div> - needed to position the dropdown content
-  
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }   
-  Dropdown Content (Hidden by Default)
-  
-
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }   
-  Links inside the dropdown
-  
  
-  .dropdown-content a:hover {background-color: #ddd}  
-  Change color of dropdown links on hover
-  
- 
-  .show {display:block;}  
-  Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-
-  .mix-button {
+.mix-button {
     background-color: #6034db;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-  } /* Pour Button */
+    text-align: center;
+  } 
 
-  .mix-button:hover, .mix-button:focus {
+.mix-button:hover, .mix-button:focus {
     background-color: #3a0bbb;
   } 
-  .mix-button {
+.mix-button {
     position: relative;
     display: inline-block;
   } 
 
-  .shake-button {
+.shake-button {
     background-color: #db344a;
     color: white;
     padding: 16px;
@@ -91,16 +52,16 @@ body {
     cursor: pointer;
   } /* Shake Button */
 
-  .shake-button:hover, .shake-button:focus {
+.shake-button:hover, .shake-button:focus {
     background-color: #7e1220;
   }  
-  .shake-button {
+.shake-button {
     position: relative;
     display: inline-block;
   } 
 
 
-  .serve-button {
+.serve-button {
     background-color: #34dbc5;
     color: white;
     padding: 16px;
@@ -109,10 +70,10 @@ body {
     cursor: pointer;
   } /* Serve Button */
 
-  .serve-button:hover, .serve-button:focus {
+.serve-button:hover, .serve-button:focus {
     background-color: #128f7e;
   }  
-  .serve-button {
+.serve-button {
     position: relative;
     display: inline-block;
   } 

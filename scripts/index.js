@@ -1,12 +1,15 @@
 
 const cocktailPTag = document.querySelector('#main');
 const randomCocktailButton = document.querySelector('#random-button');
-const removeIngredButton = document.querySelector('mix-shake-button');
+const removeIngredButton = document.querySelector('#mix-shake-button');
 const imageButton = document.querySelector('#serve-button');
 const resetBtn = document.querySelector('#reset-button');
+const cocktailImg = document.querySelector('#image');
+
 
 const Url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
+let drinkName;
 let currentImg;
 let drinkIngred;
 
@@ -21,14 +24,17 @@ function getCocktail(){
   .then(result => {
       const ul = document.querySelector('#text')
       ul.innerHTML = "";
+
       const data = result.drinks[0]
       const drinkData = [`${data.strDrink}`]
       cocktailPTag.innerText = drinkData;
-      drinkIngred = [`${data.strIngredient1}`,
+      drinkName = cocktailPTag.innerText;
+
+      const drinkIngred = [`${data.strIngredient1}`,
         `${data.strIngredient2}`, `${data.strIngredient3}`,
         `${data.strIngredient4}`, `${data.strIngredient5}`,
-        `${data.strIngredient6}`, `${data.strIngredient7}`,
-        `${data.strIngredient8}`, `${data.strIngredient9}`]
+        `${data.strIngredient6}`]
+      
       const li = document.createElement('li')
       li.textContent = drinkIngred;
       ul.append(li);
@@ -37,39 +43,28 @@ function getCocktail(){
 
 
 function removeDrink() {
-    const removeDrink = document.querySelector('#text');
-    const li = document.querySelector('li');
-    li.innerHTML = "";
-    removeDrink.innerHTML = "";
- 
+  const removeDrink = document.querySelector('#text');
+  removeDrink.innerHTML = "";
 }
 
 
 function cocktailPic(){
-    const newUl = document.createElement("ul");
-    newUl.setAttribute('id', 'text');
-
-    // const element = document.getElementById("main");
-    cocktailPTag.appendChild(newUl);
-
-
+    cocktailImg.innerText = drinkName;
     const img = document.createElement("img");
     img.src = currentImg;
-    const src = document.getElementById("image");
-    src.appendChild(img);
-    // img.innerHTML = "";
+    const pic = document.getElementById("image");
+    pic.appendChild(img);
+    img.style.display = "inline";
     
-
 }
 
 function resetAll(){
-  // inputForm.addEventListener('submit', (e) => {
-  //   e.preventDefault();
+  const removeName = document.querySelector('#main');
+  removeName.innerHTML = "Name";
+  const removePic = document.querySelector('#image');
+  removePic.innerHTML = "";
   const removeDrink = document.querySelector('#text');
-  const li = document.querySelector('li');
-  li.innerHTML = "";
   removeDrink.innerHTML = "";
-
 }
 
 
@@ -77,7 +72,7 @@ randomCocktailButton.addEventListener('click', getCocktail);
 
 removeIngredButton.addEventListener('click', removeDrink);
 
-imageButton.addEventListener('click', cocktailPic);
+imageButton.addEventListener('click');
 
 resetBtn.addEventListener('click', resetAll);
 
@@ -86,54 +81,4 @@ document.addEventListener('DOMContentLoaded', function(){
   cocktailPic();
   resetAll();
 });
-
-
-
-// --------------------------------------------------------------------
-
-
-// function cocktailName(){
-//   const inputForm = document.querySelector('form');
-//     inputForm.addEventListener('submit', (e) => {
-//       e.preventDefault();
-//       const input = document.querySelector('input#searchByID');
-//       const URL = 'http://localhost:3000/drinks?idDrink='
-//     fetch(URL + `${input.value}`)
-//     .then(res => res.json())
-//     .then(data => {
-//       const drinkText = document.querySelector('section#cocktailList h4#Drink');
-//       drinkText.innerText = json.strDrink
-//         data = `${drinks.idDrink} ${drinks.strDrink}`
-//         cocktailsName = data.innerText
-//     })})}
-
-
-// function getCocktail(){
-//     const inputForm = document.querySelector('form');
-//     inputForm.addEventListener('submit', (e) => {
-//       e.preventDefault();
-//       const input = document.querySelector('input#searchByID');
-//       const URL = 'http://localhost:3000/drinks?idDrink='
-//     fetch(URL + `${input.value}` )
-//     console.log(URL + `${input.value}`)
-//     // fetch(`http://localhost:3000/drinks?idDrink=` + `${input.value}`)
-//     .then(res => res.json())
-//     .then(json => {
-//       console.log(json)
-//       // const drinkText = document.querySelector('section#cocktailList h4#Drink');
-//       const ingredientsText = document.querySelector('section#cocktailList p#Ingedients');
-
-//       // drinkText.innerText = json.strDrink;
-//       ingredientsText.innerText = json.strIngredient;
-
-//     })})}
-
-
-
-
-
-
-// cocktailName.addEventListener('click', )
-// cocktailPTag.addEventListener('click', getCocktail());
-
 
