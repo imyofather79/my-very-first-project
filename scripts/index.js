@@ -37,6 +37,9 @@ function getCocktail(){
       li.textContent = drinkIngred;
       ul.append(li);
       currentImg = data.strDrinkThumb;
+
+      const removePic = document.querySelector('#image');
+      removePic.innerHTML = "";
 })}
 
 function removeDrink() {
@@ -59,6 +62,8 @@ function resetAll(){
   removePic.innerHTML = "";
   const removeDrink = document.querySelector('#text');
   removeDrink.innerHTML = "";
+  currentImg = "";
+  drinkName = "";
   alert("GO HOME! YOU ARE DRUNK");
 }
 

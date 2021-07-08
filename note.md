@@ -19,7 +19,7 @@ Stretch Goals
 2.Adding styles with the wordings (done)
 3.Adding image of the drink (done: serve button)
 4.Adding the random tips feature (After hitting serve button)
-5.A GIF/img of a shaker will be generated and enable the up-down motion of the shaker (in the mix&shake button)
+5.A GIF/img of a shaker will be generated of the up-down motion of the shaker (in the mix&shake button)
 
 
 
