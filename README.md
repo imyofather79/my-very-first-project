@@ -2,7 +2,7 @@ Introduction:
 
 The Bartender
 
-This is simply interactive webpage where you can mix your own cocktails! The end-user will be interacting with the available click-buttons to proceed the interactive web page.
+This is a simple interactive webpage where you can mix your own cocktails! The end-user will be interacting with the available click-buttons to proceed to the interactive web page.
 
 Installation & Usage
 

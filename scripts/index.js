@@ -6,13 +6,11 @@ const imageButton = document.querySelector('#serve-button');
 const resetBtn = document.querySelector('#reset-button');
 const cocktailImg = document.querySelector('#image');
 
-
 const Url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
 
 let drinkName;
 let currentImg;
 let drinkIngred;
-
 
 function getCocktail(){
   return fetch(Url, {
@@ -41,20 +39,17 @@ function getCocktail(){
       currentImg = data.strDrinkThumb;
 })}
 
-
 function removeDrink() {
   const removeDrink = document.querySelector('#text');
   removeDrink.innerHTML = "";
 }
-
 
 function cocktailPic(){
     cocktailImg.innerText = drinkName + "\n";
     const img = document.createElement("img");
     img.src = currentImg;
     cocktailImg.appendChild(img);
- 
-    
+    alert("HERE IS YOUR DRINK");
 }
 
 function resetAll(){
@@ -64,6 +59,7 @@ function resetAll(){
   removePic.innerHTML = "";
   const removeDrink = document.querySelector('#text');
   removeDrink.innerHTML = "";
+  alert("GO HOME! YOU ARE DRUNK");
 }
 
 
@@ -80,4 +76,3 @@ document.addEventListener('DOMContentLoaded', function(){
   cocktailPic();
   resetAll();
 });
-
